@@ -1,0 +1,55 @@
+
+@verticalShadow: 0;
+@horizontalShadow: 0;
+@spreadRadius: 0;
+@blurRadius: 0;
+
+//Helper Function for the x, y values for the shadow
+.setVerticalHorizontalOffset(@psAngle, @offset){
+  @angle: @psAngle - 90;
+  @verticalShadow: @offset * cos(@angle / 360 * 2 * pi());
+  @horizontalShadow: @offset * sin(@angle / 360 * 2 * pi());
+}
+
+.setSpreadBlur(@psSpread, @psSize) when (@psSpread > 1){
+  @decimalSpread: @psSpread / 100;
+  .calculateSpreadBlur(@decimalSpread, @psSize);
+}
+.setSpreadBlur(@psSpread, @psSize) when (ispercentage(@psSpread)){
+  @decimalSpread: (unit(@psSpread)) / 100;
+  .calculateSpreadBlur(@decimalSpread, @psSize);
+}
+.setSpreadBlur(@psSpread, @psSize) when (@psSpread <= 1){
+  .calculateSpreadBlur(@psSpread, @psSize);
+}
+
+.calculateSpreadBlur(@decimalSpread, @psSize){
+  @spreadRadius: (@decimalSpread * @psSize)* 1px;
+  @blurRadius: (1-@decimalSpread) * @psSize;
+}
+
+.innerBoxShadow (@psDistance, @psSpread, @psSize, @psAngle, @color){
+  .setSpreadBlur(@psSpread, @psSize);
+  .setVerticalHorizontalOffset(@psAngle, @psDistance);
+  -webkit-box-shadow: inset @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+  -moz-box-shadow: inset @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+  box-shadow: inset @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+
+}
+
+.outerBoxShadow(@psDistance, @psSpread, @psSize, @psAngle, @color){
+  .setSpreadBlur(@psSpread, @psSize);
+  .setVerticalHorizontalOffset(@psAngle, @psDistance);
+  -webkit-box-shadow: @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+  -moz-box-shadow: @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+  box-shadow: @horizontalShadow @verticalShadow @blurRadius @spreadRadius @color;
+}
+
+.shadowTransition(@duration){
+  -webkit-transition: box-shadow @duration linear;
+  -o-transition: box-shadow @duration linear;
+  -moz-transition: box-shadow @duration linear;
+  -ms-transition: box-shadow @duration linear;
+  -kthtml-transition: box-shadow @duration linear;
+  transition: box-shadow @duration linear;
+}

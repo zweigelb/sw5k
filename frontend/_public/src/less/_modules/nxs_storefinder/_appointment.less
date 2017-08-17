@@ -1,0 +1,63 @@
+.ui-widget {
+  border-radius: 0;
+  color: @colorBlack;
+  .unitize(font-size,14);
+  .unitize(line-height,20);
+}
+
+.ui-datepicker .ui-datepicker-header {
+  background: @colorWhite;
+  border-radius: 0;
+  box-shadow: none;
+  color: @brand-secondary;
+  .unitize(font-size,14);
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+  border-radius: 0;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+  background: @colorWhite;
+  border: 1px solid @colorDots;
+  color: @brand-secondary;
+}
+
+.ui-datepicker td.ui-datepicker-week-end a {
+  color: @brand-secondary;
+}
+
+.ui-datepicker td.ui-datepicker-week-end:last-child a {
+  color: @colorDots;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+  background: @brand-primary;
+  border-color: @colorDots;
+  color: @brand-secondary;
+}
+
+.ui-datepicker td.ui-datepicker-today a {
+  font-style: normal;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  border-color: @brand-secondary;
+  color: @brand-secondary;
+  .unitize-padding(5,15);
+  text-transform: uppercase;
+}
+
+.form-widget {
+  &--text {
+    .unitize(margin-top,10)
+  }
+
+  &--btn {
+    .unitize-margin(0,0,10);
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize-margin(0,0);
+    }
+  }
+}

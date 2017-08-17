@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+
+  &.no-width {
+    width: auto;
+
+    td {
+      .unitize-padding(0,20,0,0);
+    }
+  }
+
+  td {
+    background: none;
+    border: none;
+    .unitize(font-size,14);
+    .unitize(line-height,16);
+    .unitize-padding(5,10);
+  }
+
+  tr:nth-child(even) td {
+    background: none;
+  }
+}

@@ -1,0 +1,107 @@
+.storefinder {
+  &--search {
+    &-main {}
+
+    &-form {
+      background: @colorWhite;
+      .clearfix();
+      .unitize(margin-bottom,20);
+      .unitize-padding(40,20,40,40);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        .unitize(margin-bottom,40);
+        .unitize-padding(20,0,0,20);
+      }
+
+      .form--entry {
+        position: relative;
+
+        &.is {
+          &--fifth {
+            width: 100%;
+
+            @media screen and (min-width: @tabletViewportWidth) {
+              width: 25%;
+            }
+
+            @media screen and (min-width: @tabletLandscapeViewportWidth) {
+              width: 20%;
+            }
+
+            &.is--btn-wrap {
+              width: 100%;
+
+              @media screen and (min-width: @tabletViewportWidth) {
+                width: 25%;
+              }
+
+              @media screen and (min-width: @tabletLandscapeViewportWidth) {
+                width: 20%;
+              }
+            }
+          }
+
+          &--twoFifth {
+            width: 100%;
+
+            @media screen and (min-width: @tabletViewportWidth) {
+              width: 50%;
+            }
+
+            @media screen and (min-width: @tabletLandscapeViewportWidth) {
+              width: 40%;
+            }
+          }
+        }
+      }
+
+      .btn {
+        .unitize(margin-top,30);
+        text-align: center;
+
+        @media screen and (min-width: @tabletViewportWidth) {
+          .unitize(margin-top,0);
+        }
+
+        @media screen and (min-width: @tabletLandscapeViewportWidth) {
+          .unitize(margin-top,30);
+        }
+      }
+    }
+  }
+
+  &--geolocation {
+    &-error {
+      color: @colorRed;
+      .unitize(margin-bottom,20);
+    }
+
+    &-trigger {
+      .unitize(bottom,15);
+      cursor: pointer;
+      .unitize-height(36);
+      position: absolute;
+      .unitize(right,25);
+      text-align: center;
+      .unitize-width(22.5);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: none;
+      }
+
+      .sprite--geolocation {
+        background: url('@{imagePath}/geolocation.png') no-repeat left center;
+        background-size: 48px 22.5px;
+        display: inline-block;
+        .unitize-height(36);
+        .unitize-width(23);
+      }
+
+      &.is--active {
+        .sprite--geolocation {
+          background-position: right center;
+        }
+      }
+    }
+  }
+}

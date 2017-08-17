@@ -1,0 +1,42 @@
+.shop--navigation .navigation--entry {
+  &.entry--cart {
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      position: fixed;
+      .unitize(right,30);
+      .unitize(top,16);
+      z-index: @index-header-cart;
+    }
+  }
+
+  &.entry--account {
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      .unitize(margin-right,126);
+    }
+  }
+}
+
+// Basket Flyout
+.container--ajax-cart {
+  @media screen and (min-width: @tabletLandscapeViewportWidth) {
+    position: fixed;
+  }
+}
+
+.header-main {
+  &.has--spacing {
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      .unitize(margin-bottom,38);
+    }
+  }
+}
+
+
+.navigation-main {
+  &.is--fixed {
+    .unitize-padding(16,166,0,0);
+    position: fixed;
+    .unitize(top,0);
+    width: 100%;
+    z-index: @index-fixed-nav;
+  }
+}

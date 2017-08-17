@@ -1,0 +1,95 @@
+.entry--search {
+  .entry--link {
+    color: @brand-secondary;
+    .unitize-padding(10,10);
+
+    @media screen and (min-width: @phoneLandscapeViewportWidth) {
+      .unitize-padding(0,0);
+    }
+  }
+
+  &.is--active .main-search--form {
+    background: transparent;
+  }
+
+  .main-search--form {
+    .main-search {
+      &--field {
+        background: transparent;
+        border-color: @brand-secondary;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        box-shadow: none;
+        box-sizing: border-box;
+        color: @brand-secondary;
+        .unitize(font-size,12);
+        .unitize-margin(0,0);
+        .unitize-padding(9,29,9,0);
+        text-transform: uppercase;
+        -webkit-appearance:none;
+
+        &:focus {
+          background: transparent;
+          border-bottom: 1px solid @brand-secondary;
+        }
+      }
+
+      &--button {
+        @media screen and (min-width: @phoneLandscapeViewportWidth) {
+          .unitize-padding(0,0);
+        }
+      }
+    }
+  }
+}
+
+.shop--navigation {
+  .entry--search {
+    @media screen and (min-width: @phoneLandscapeViewportWidth) {
+      position: static;
+      width: 35%;
+    }
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      background: transparent;
+      .unitize-margin(0,15,0,0);
+      position: static;
+      width: 40%;
+    }
+
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      width: 25%;
+    }
+  }
+
+  .navigation--entry  {
+    .main-search--form {
+      .icon--search {
+        .unitize(font-size,15);
+        position: relative;
+        .unitize(top,-2);
+      }
+    }
+  }
+}
+
+
+.has--csstransforms .entry--search .entry--trigger.is--active::after {
+  display: none;
+}
+
+.is--firefox {
+  .shop--navigation {
+    .entry--search {
+      @media screen and (min-width: @phoneLandscapeViewportWidth) {
+        left: inherit;
+        position: relative;
+        .unitize(top,10);
+      }
+
+      @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        .unitize(top,5);
+      }
+    }
+  }
+}

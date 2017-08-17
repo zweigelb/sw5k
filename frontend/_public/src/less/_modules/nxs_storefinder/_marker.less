@@ -1,0 +1,64 @@
+.storefinder--map  {
+  .storefinder--marker {
+    &-main {
+      .unitize-padding(20,0);
+      position: relative;
+      .unitize-width(260);
+    }
+
+    &-number {
+      background: @colorBlack;
+      border: 2px solid @colorWhite;
+      border-radius: 90px;
+      color: @colorWhite;
+      display: inline-block;
+      .unitize-height(26);
+      .unitize(left, 6);
+      .unitize(line-height, 24);
+      position: absolute;
+      text-align: center;
+      .unitize(top, 6);
+      .unitize-width(26);
+    }
+
+    &-info {
+      text-align: left;
+    }
+
+    &-location {
+      color: @brand-primary;
+      .unitize(font-size,14);
+      .unitize(margin-bottom,3);
+    }
+
+    &-address,
+    &-times,
+    &-contact {
+      .unitize(font-size,14);
+      .unitize(margin-bottom,3);
+
+      a {
+        color: @brand-primary;
+        .unitize(font-size,14);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.nxs-MapZoomControl {
+  bottom: 95px !important;
+  right: 30px !important;
+}
+
+.storeFinderMapMarker {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: -51px !important;
+  transform: translateX(-50%);
+  width: 43px;
+  line-height: 43px;
+  padding-bottom: 8px;
+  text-align: center;
+  background: url('../../../images/marker/marker.png') center center no-repeat;
+}

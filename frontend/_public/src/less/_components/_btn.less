@@ -1,0 +1,30 @@
+.btn {
+  background: @colorWhite;
+  border: 1px solid @colorBlack;
+  border-radius: 0;
+  color: @colorBlack;
+  .unitize(font-size,14);
+  font-weight: normal;
+
+  &:hover {
+    background: @colorBlack;
+    color: @colorWhite;
+  }
+
+  &.is--primary {
+    background: @colorBlack;
+    color: @colorWhite;
+
+    &:hover {
+      background: @colorWhite;
+      color: @colorBlack;
+    }
+  }
+}
+
+.form--entry {
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,21 @@
+.to-top {
+  background: @colorBlack;
+  border: 1px solid @colorWhite;
+  .unitize(bottom,50);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  color: @colorWhite;
+  cursor: pointer;
+  display: none;
+  .unitize-height(48);
+  .unitize(line-height,48);
+  position: fixed;
+  .unitize(right,30);
+  text-align: center;
+  .unitize-width(48);
+  z-index: @index-totop;
+
+  .fa {
+    .unitize(font-size,26);
+    .unitize(line-height,16);
+  }
+}

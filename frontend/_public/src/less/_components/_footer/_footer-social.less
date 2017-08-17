@@ -1,0 +1,48 @@
+.footer--social {
+  .unitize-margin(0,0,30);
+  text-align: center;
+
+  @media screen and (min-width: @tabletViewportWidth) {
+    display: inline-block;
+    .unitize-margin(0,0);
+    .unitize(min-width, 180);
+    position: relative;
+    text-align: left;
+    .unitize(top,-10);
+  }
+
+  @media screen and (min-width: @tabletViewportWidth) {
+    border-left: 1px solid @brand-secondary;
+    .unitize(margin-left,15);
+    .unitize(padding-left,15);
+  }
+
+  &-label {
+    color: @colorWhite;
+    display: inline-block;
+    .unitize(font-size,14);
+    .grotesk();
+    .unitize(line-height,24);
+    .unitize-margin(0,0,10);
+    text-align: center;
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      float: left;
+      .unitize-margin(0,0);
+      text-align: left;
+    }
+  }
+
+  &-list {}
+
+  &-link {
+    color: @colorWhite;
+    .unitize-padding(0,0,0,15);
+    text-align: center;
+
+    .fa {
+      .unitize(font-size,24);
+      .unitize(line-height,24);
+    }
+  }
+}

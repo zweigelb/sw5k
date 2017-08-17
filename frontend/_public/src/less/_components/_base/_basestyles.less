@@ -1,0 +1,134 @@
+// Grundformatierungen
+::-moz-selection {
+  background: @highlight;
+  text-shadow: none;
+}
+
+::selection {
+  background: @highlight;
+  text-shadow: none;
+}
+
+body {
+  background: @colorWhite;
+  color: @font-text-color;
+  .unitize(font-size,14);
+  .unitize(line-height,20);
+}
+
+a {
+  color: @colorBlack;
+  .unitize(line-height,18);
+  outline: none !important;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+h1 {
+  border-bottom: 1px solid @border-light;
+  color: @colorBlack;
+  .unitize(font-size,22);
+  .grotesk();
+  .unitize(line-height,34);
+  .unitize-margin(0,0);
+  .unitize-padding(30,0,10);
+  text-transform: uppercase;
+}
+
+h2 {
+  border-bottom: 1px solid @border-light;
+  color: @colorBlack;
+  font-weight: @font-light-weight;
+  .unitize(font-size,13);
+  .unitize(line-height,14);
+  .unitize-margin(0,0);
+  .unitize-padding(10,0,10);
+}
+
+h3 {
+  .unitize(font-size,16);
+  .unitize(line-height,20);
+  .unitize-margin(0,0,20);
+}
+
+h4 {
+  .unitize(font-size,16);
+  .unitize(line-height,20);
+}
+
+p {
+  .unitize-margin(0,0,20);
+  .unitize(font-size,14);
+  .unitize(line-height,18);
+}
+
+section {
+  position: relative;
+}
+
+ul, ol {
+  .unitize-margin(0,0,20);
+
+  li {
+    .unitize(line-height,30);
+  }
+}
+
+nav {
+  ul, ol {
+    list-style: none;
+    .unitize-margin(0,0);
+  }
+}
+
+/*
+.page {
+  &-wrap {
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      .unitize(padding-top,112);
+    }
+  }
+
+  &-header {
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      .unitize-height(112);
+      .unitize(left,0);
+      position: fixed;
+      .unitize(top,0);
+      width: 100%;
+      z-index: @index-header;
+    }
+  }
+}
+*/
+
+.is--minimal-header {
+  .page {
+    &-wrap {
+      @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        .unitize(padding-top,0);
+      }
+    }
+
+    &-header {
+      @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        position: static;
+      }
+    }
+  }
+}
+
+.container {
+  background: transparent;
+}
+
+.content-main {
+  box-shadow: none;
+}
+
+.panel--title {
+  text-transform:uppercase;
+}
+

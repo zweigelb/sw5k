@@ -1,0 +1,30 @@
+.is--ctl-checkout.is--minimal-header .header-main,
+.is--ctl-register.is--minimal-header .header-main,
+.is--ctl-register.is--minimal-header.is--target-checkout .header-main {
+  box-shadow: none;
+}
+
+.product--table {
+  .column--quantity {
+    .quantity--label {
+      @media screen and (min-width: @phoneLandscapeViewportWidth) {
+        .unitize(margin-bottom,12);
+      }
+    }
+  }
+
+  .row--product {
+    .column--quantity {
+      text-align: right;
+
+      @media screen and (min-width: @phoneLandscapeViewportWidth) {
+        text-align: left;
+      }
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        .unitize(line-height, 42);
+        text-align: right;
+      }
+    }
+  }
+}

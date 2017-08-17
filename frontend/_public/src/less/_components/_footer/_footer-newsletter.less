@@ -1,0 +1,80 @@
+.footer--content {
+  .newsletter {
+    &--form {
+      .clearfix();
+      display: block;
+      .unitize-margin(0,0,30);
+      .unitize-padding(0,0);
+      .unitize(padding-left,15);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: inline-block;
+        .unitize-margin(0,0);
+      }
+
+      @media screen and (min-width: 1500px){
+        .unitize(padding-left,0);
+      }
+
+      &-inner {
+        border-bottom: 1px solid @footer-gray;
+        .clearfix();
+        display: block;
+        margin: 0 auto;
+        .unitize-padding(10,0);
+        .unitize-width(300);
+
+        @media screen and (min-width: @tabletViewportWidth) {
+          display: inline-block;
+        }
+      }
+    }
+
+    &--label {
+      color: @colorWhite;
+      display: block;
+      .unitize(font-size,14);
+      .grotesk();
+      .unitize(line-height,20);
+      .unitize-margin(0,0,10);
+      text-align: center;
+      text-transform: uppercase;
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: inline-block;
+        float: left;
+        .unitize-margin(8,30,0,0);
+        text-align: left;
+      }
+    }
+
+    &--field {
+      background: none;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      color: @brand-secondary;
+      .unitize(font-size,12);
+      height: auto;
+      .unitize(line-height,20);
+      .unitize-padding(0,0);
+      .unitize-margin(0,0);
+      text-transform: uppercase;
+      width: 90%;
+
+      &:hover,
+      &:focus {
+        background: none;
+      }
+    }
+
+    &--button {
+      background: none;
+      border: none;
+      color: @brand-secondary;
+      .unitize-padding(0,0);
+      text-align: right;
+      width: 10%;
+    }
+  }
+}

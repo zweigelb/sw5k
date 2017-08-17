@@ -1,0 +1,68 @@
+.box--slider {
+  .product {
+    &--image {
+      .unitize-height(200);
+    }
+  }
+}
+
+.product--box {
+  .product--image {
+    .image--element {
+      img {
+        height: 100%;
+        position: static;
+        width: auto;
+      }
+    }
+  }
+}
+
+.product-slider {
+  &--arrow {
+    .unitize-height(36);
+    .unitize(margin-top,-18);
+    top: 50%;
+    .unitize-width(19);
+
+    &:before {
+      background: url('@{imagePath}/arrows.png') no-repeat left center;
+      background-size: 38px 36px;
+      content: '';
+      display: block;
+      .unitize-height(36);
+      .unitize-width(19);
+
+      @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
+        background-image: url('@{imagePath}/arrows@2x.png');
+      }
+    }
+
+    &.arrow--next,
+    &.arrow--prev {
+      border-width: 0;
+      border-radius: 0;
+
+      &:before {
+        content: '';
+      }
+    }
+
+    &.arrow--next {
+      &:before {
+        background-position: right center;
+      }
+    }
+  }
+}
+
+.product--crossselling-title {
+  border: 1px solid @colorDots;
+  border-width: 1px 0 0;
+  .unitize(font-size,22);
+  font-weight: normal;
+  .grotesk();
+  .unitize-margin(40,0,0);
+  .unitize-padding(40,0,20);
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+.emotion {
+  &--wrapper {
+    .unitize(max-width,1260);
+    .unitize-margin(0,20);
+
+    &.is--fullscreen {
+      background: @colorBlack;
+      .unitize-margin(0,0);
+
+      @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        .unitize-margin(0,0);
+      }
+    }
+  }
+
+  &--container {
+    background: transparent;
+  }
+
+  &--html {
+    .unitize-padding(0,0);
+  }
+}
+
+.html--content {
+  height: 100%;
+}

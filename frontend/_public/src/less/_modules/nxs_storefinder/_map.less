@@ -1,0 +1,26 @@
+.storefinder {
+  &--map {
+    display: none;
+    .unitize-height(500);
+    .unitize(margin-bottom,20);
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      display: block;
+    }
+  }
+
+  &--main {
+    .unitize-margin(20,0,0);
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize-margin(0,0);
+    }
+  }
+}
+
+.gm-style {
+  img {
+    max-height: none;
+    width: 100%;
+  }
+}

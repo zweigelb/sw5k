@@ -1,0 +1,55 @@
+.product {
+  &--accordion {
+    border-top: 1px solid @colorDots;
+
+    &-item {
+      border-bottom: 1px solid @colorDots;
+
+      &.is--open {
+        .product--accordion-trigger:after {
+          content: "\f078";
+        }
+      }
+    }
+
+    &-trigger {
+      cursor: pointer;
+      .unitize-padding(14, 40, 14, 0);
+      position: relative;
+      text-transform: uppercase;
+
+      &:after {
+        content: "\f054";
+        display: inline-block;
+        font-family: FontAwesome;
+        .unitize(font-size, 16);
+        .unitize-height(44);
+        .unitize(line-height, 44);
+        position: absolute;
+        .unitize(right, 0);
+        text-align: center;
+        .unitize(top, 0);
+        .unitize-width(40);
+      }
+    }
+
+    &-content {
+      color: @colorAccordion;
+      .unitize-padding(0, 0, 14);
+
+      p, a {
+        color: @colorAccordion;
+      }
+    }
+  }
+
+  &--properties {
+    &-label {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.product--details .product--properties {
+  width: 100%;
+}

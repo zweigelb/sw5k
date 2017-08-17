@@ -1,0 +1,33 @@
+.footer {
+  &--content {
+    .clearfix();
+    text-align: left;
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize-padding(40,0);
+    }
+
+    @media screen and (min-width: 1500px) {
+      .unitize-padding(40,15,40,0);
+      text-align: right;
+    }
+
+    &-nav {
+      @media screen and (min-width: @tabletViewportWidth) {
+        .unitize-margin(0,0,20);
+        text-align: left;
+      }
+
+      @media screen and (min-width: 1500px) {
+        float: left;
+        .unitize-margin(10,0,0);
+        text-align: left;
+      }
+
+      .footer--nav-link {
+        .unitize(font-size,13);
+        text-transform: uppercase;
+      }
+    }
+  }
+}

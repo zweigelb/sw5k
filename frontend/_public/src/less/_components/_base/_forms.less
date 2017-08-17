@@ -1,0 +1,311 @@
+input {
+  &[type="text"],
+  &[type="search"],
+  &[type="password"],
+  &[type="number"],
+  &[type="email"],
+  &[type="tel"] {
+    background: @colorWhite;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: none;
+    color: @colorBlack;
+    display: block;
+    .unitize(font-size,14);
+    .unitize-height(36);
+    .unitize(line-height,36);
+    .unitize(margin-bottom,15);
+    .unitize-padding(0,20);
+    width: 100%;
+
+    &:focus {
+      border-color: @border;
+    }
+  }
+}
+
+select {
+  width: 100%;
+}
+
+textarea {
+  background: @colorWhite;
+  border: 1px solid @border;
+  border-radius: 0;
+  box-shadow: none;
+  color: @brand-secondary;
+  display: block;
+  .unitize(font-size,14);
+  .unitize-height(120);
+  .unitize(line-height,24);
+  .unitize(margin-bottom,15);
+  .unitize-padding(10,20);
+  width: 100%;
+
+  &:focus {
+    border-color: @border;
+  }
+}
+
+label {
+  display: block;
+  .unitize(font-size,14);
+  .unitize(line-height,24);
+  .unitize(margin-bottom,10);
+  text-transform: uppercase;
+}
+
+.has--error {
+  label {
+    color: @error;
+  }
+
+  input {
+    &[type="text"],
+    &[type="search"],
+    &[type="password"],
+    &[type="number"],
+    &[type="email"],
+    &[type="tel"] {
+      border-color: @error;
+      color: @error;
+    }
+  }
+
+  textarea {
+    border-color: @error;
+    color: @error;
+  }
+}
+
+.form {
+  &--title {
+    .unitize(font-size,20);
+    .unitize(line-height,34);
+    .unitize-padding(15,0);
+    text-align: left;
+  }
+
+  &--entry {
+    float: left;
+    .unitize(padding-right,20);
+    width: 100%;
+
+    &.is {
+      &--half {
+        @media screen and (min-width: @tabletViewportWidth) {
+          width: 50%;
+
+          &-single {
+            margin-right: 50%;
+            width: 50%;
+          }
+        }
+      }
+
+      &--third {
+        width: 33.3%;
+      }
+
+      &--quarter {
+        width: 25%;
+      }
+
+      &--threeQuarter {
+        width: 75%;
+      }
+    }
+  }
+
+  &--checkbox {
+    &-wrap {}
+
+    &-label {
+      cursor: pointer;
+      .unitize(margin-bottom,10);
+      .unitize(min-height,28);
+      .unitize(padding-left,48);
+      position: relative;
+
+      &:before {
+        background: @colorWhite;
+        border: 1px solid @border;
+        border-radius: 0;
+        box-shadow: none;
+        box-sizing: border-box;
+        content: '';
+        display: inline-block;
+        .unitize-height(28);
+        .unitize(left,0);
+        position: absolute;
+        .unitize(top,0);
+        .unitize-width(28);
+      }
+
+      &:after {
+        content: "\e60c";
+        display: none;
+        font-family: shopware;
+        .unitize(font-size,14);
+        .unitize-height(28);
+        .unitize(left,0);
+        .unitize(line-height,28);
+        position: absolute;
+        text-align: center;
+        .unitize(top,0);
+        .unitize-width(28);
+      }
+    }
+  }
+
+  &--radio {
+    &-wrap {}
+
+    &-label {
+      cursor: pointer;
+      .unitize(line-height,28);
+      .unitize(margin-bottom,10);
+      .unitize(min-height,28);
+      .unitize(padding-left,48);
+      position: relative;
+
+      &:before {
+        background: @colorWhite;
+        border: 1px solid @border;
+        border-radius: 90px;
+        box-sizing: border-box;
+        content: '';
+        display: inline-block;
+        .unitize-height(28);
+        .unitize(left,0);
+        position: absolute;
+        .unitize(top,0);
+        .unitize-width(28);
+      }
+
+      &:after {
+        background: @brand-secondary;
+        border-radius: 90px;
+        content: "";
+        display: none;
+        .unitize-height(12);
+        .unitize(left,8);
+        position: absolute;
+        text-align: center;
+        .unitize(top,8);
+        .unitize-width(12);
+      }
+    }
+  }
+}
+
+.is--active .form--checkbox-label:after,
+.is--active .form--radio-label:after{
+  display: inline-block;
+}
+
+.required_fields {
+  .unitize-padding(10,0);
+}
+
+
+.select2.select2-container--default {
+  .unitize(margin-bottom,10);
+  width: 100% !important;
+  z-index: inherit;
+
+  @media screen and (min-width: @tabletViewportWidth) {
+    .unitize(margin-bottom,15);
+  }
+}
+.select2-container--default {
+  z-index: @index-select2;
+
+  .select2-selection--single {
+    background: @colorWhite;
+    border: 1px solid @border;
+    border-radius: 0;
+    box-shadow: none;
+    height: auto;
+    outline: none;
+
+    &:focus {
+      border-color: @border;
+    }
+
+    .select2-selection {
+      &__rendered {
+        color: @colorBlack;
+        display: block;
+        .unitize(font-size, 14);
+        .unitize-height(34);
+        .unitize(line-height, 34);
+        .unitize-padding(0, 40, 0, 20);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &__arrow {
+        .unitize-height(36);
+        .unitize(right,0);
+        .unitize-width(40);
+
+        b {
+          display: none;
+        }
+
+        &:after {
+          border: none;
+          color: @colorBlack;
+          content: '\f078';
+          display: inline-block;
+          .unitize(font-size,16);
+          font-family: FontAwesome;
+          .unitize-height(36);
+          .unitize(line-height,36);
+          text-align: center;
+          .unitize-width(40);
+        }
+      }
+    }
+  }
+
+  &.select2-container--open {
+    .select2-selection--single {
+      .select2-selection__arrow:after {
+        content: '\f077';
+      }
+    }
+  }
+
+  .select2-results__option {
+    outline: 0;
+    .unitize-padding(20,20);
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize-padding(6,20);
+    }
+
+    &[aria-selected=true] {
+      background: @colorDots;
+    }
+
+    &[aria-disabled=true] {
+      display: none;
+    }
+
+    &--highlighted[aria-selected] {
+      background: @footer-link;
+      color: @colorBlack;
+    }
+  }
+
+  .select2-dropdown {
+    border-color: @border;
+  }
+}
+
+input[type=checkbox] + label {
+  display: inline-block;
+}

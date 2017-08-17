@@ -1,0 +1,31 @@
+.is {
+  &--hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  &--visible {
+    display: block;
+    visibility: visible;
+  }
+
+  &--rounded {
+    border-radius: 5px;
+  }
+
+  &--mobile-only {
+    display: block;
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      display: none;
+    }
+  }
+
+  &--desktop-only {
+    display: none;
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      display: block;
+    }
+  }
+}

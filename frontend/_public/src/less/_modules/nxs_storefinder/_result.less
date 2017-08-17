@@ -1,0 +1,211 @@
+.ng-hide {
+  display: none;
+}
+
+.storefinder {
+  &--result {
+    &-list {
+      .clearfix();
+    }
+
+    &-item {
+      border-bottom: 1px solid @colorDots;
+      .unitize-padding(20,40);
+      width: 100%;
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        border-width: 0;
+        float: left;
+        .unitize-padding(10,10,20);
+        width: 33.3%;
+      }
+
+      @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        width: 25%;
+      }
+    }
+
+    &-info {}
+
+    &-location {
+      color: @brand-primary;
+      cursor: pointer;
+      float: left;
+      .unitize(font-size,24);
+      .unitize(line-height,30);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        float: none;
+        .unitize(font-size,18);
+        .unitize(line-height,24);
+        .unitize(margin-bottom,30);
+      }
+    }
+
+    &-distance {
+      float: right;
+      .unitize(font-size,24);
+      .unitize(line-height,30);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: none;
+      }
+    }
+
+    &-phone {
+      display: none;
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: block;
+      }
+    }
+
+    &-times {
+      border: 1px solid @colorDots;
+      border-width: 1px 0;
+      .unitize-padding(20,40);
+      .unitize-margin(0,-40);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        border-width: 0;
+        .unitize(font-size,14);
+        .unitize(min-height,60);
+        .unitize-margin(0,0,20);
+        .unitize-padding(0,0);
+      }
+    }
+
+    &-btnwrap {
+      @media screen and (min-width: @tabletViewportWidth) {
+        .unitize-height(120);
+      }
+
+      .btn {
+        .unitize(margin-top, 10);
+        text-align: center;
+        width: 100%;
+
+        @media screen and (min-width: @tabletViewportWidth) {
+          .unitize(margin-top, 0);
+
+          &.is--appointment {
+            .unitize(margin-top,10);
+          }
+        }
+      }
+    }
+  }
+
+  &--image {
+    &-main {
+      display: none;
+      .unitize(margin-bottom,10);
+      position: relative;
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: block;
+      }
+    }
+
+    &-number {
+      background: @colorBlack;
+      border: 2px solid @colorWhite;
+      border-radius: 90px;
+      color: @colorWhite;
+      .unitize(font-size,18);
+      .unitize-height(40);
+      .unitize(left,10);
+      .unitize(line-height,36);
+      position: absolute;
+      text-align: center;
+      .unitize(top,10);
+      .unitize-width(40);
+    }
+  }
+
+  &--address {
+    cursor: pointer;
+    .unitize(padding-right,80);
+    position: relative;
+
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize(font-size,14);
+      .unitize(line-height,24);
+      .unitize(min-height,144);
+      .unitize(padding-right,0);
+    }
+
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      .unitize(min-height,130);
+    }
+
+    &:after {
+      .unitize(bottom,20);
+      content: "\f078";
+      display: inline-block;
+      font-family: FontAwesome;
+      .unitize(font-size,20);
+      .unitize-height(13);
+      .unitize(line-height,20);
+      position: absolute;
+      .unitize(right,0);
+      .unitize-width(25);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: none;
+      }
+    }
+
+    &-main {
+      clear: both;
+      .unitize-margin(54,0,0,0);
+    }
+  }
+
+  &--contact {
+    &-main {
+      .unitize-margin(20,0);
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        .unitize(font-size,14);
+        .unitize-margin(0,0);
+        .unitize-height(70);
+        overflow: hidden;
+      }
+    }
+
+    &-email {
+      color: @brand-primary;
+      text-decoration: none;
+
+
+      @media screen and (min-width: @tabletViewportWidth) {
+        display: inline-block;
+        .unitize(font-size,12);
+        .unitize(min-height,50);
+      }
+    }
+  }
+
+  &--mobile-fold {
+    display: none;
+
+    @media screen and (min-width: @tabletViewportWidth){
+      display: block;
+    }
+
+    &.is--open {
+      display: block;
+    }
+  }
+
+  &--outlet-info {
+    @media screen and (min-width: @tabletViewportWidth) {
+      .unitize-margin(60,0,0);
+    }
+  }
+}
+
+.is--open .storefinder--address:after {
+  content: "\f077";
+}

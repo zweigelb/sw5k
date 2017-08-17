@@ -1,0 +1,71 @@
+.navigation-main {
+  background: @brand-primary;
+  border-bottom-width: 0;
+
+  .container {
+    max-width: none;
+    .unitize-padding(0,20);
+  }
+
+  .navigation {
+    &--list {
+      .unitize-padding(0,0);
+    }
+
+    &--entry {
+      .unitize-padding(0,10);
+      position: relative;
+
+      &:before {
+        background: @brand-secondary;
+        content: '';
+        display: block;
+        .unitize-height(20);
+        .unitize(left,0);
+        .unitize(margin-top,-10);
+        position: absolute;
+        top: 50%;
+        .unitize-width(1);
+      }
+
+      &:first-child {
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    &--link {
+      border-radius: 0;
+      .unitize(font-size,12);
+      .unitize-padding(10,10);
+      text-transform: uppercase;
+
+      &:hover {
+        color: @colorWhite;
+      }
+
+      &[title='Sale'] {
+        .grotesk();
+      }
+    }
+  }
+
+  .is--active {
+    .navigation--link {
+      background: @colorWhite;
+      color: @colorBlack;
+      font-weight: normal;
+
+      &:hover {
+        color: @colorBlack;
+      }
+    }
+  }
+}
+
+.js--menu-scroller--arrow {
+  background: @colorBlack;
+  border-color: @colorWhite;
+  color: @colorWhite;
+}
